@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Gradle Explained</string>
+    <string name="hello_world">Hello World from src main!</string>
+    <string name="next">Next</string>
+    <string name="paid">paid</string>
+    <string name="upgrade_to_paid">Upgrade to paid version</string>
+</resources>
