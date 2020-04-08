@@ -1,2 +1,12 @@
 rootProject.name='Gradle Explained'
-include ':app'
+
+/**
+ * Create KotlinJokes as:
+ * 1. Project > New > Module > Java or Kotlin lib
+ * 2. Choose language you want and create module
+ * 3. The module gets auto included but if not, do as below
+ * 4. Then, run inbuilt task 'projects' to see if it is included, as:
+ * ./gradlew TASK_NAME
+ * ./gradlew projects
+ * */
+include ':app', ':KotlinJokes'

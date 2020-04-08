@@ -145,4 +145,17 @@ dependencies {
     // dependencies can be managed basis flavor as below
     // Assume we want to show ads in free version only
     freeImplementation "com.google.android.gms:play-services-ads:19.0.1"
+
+    /**
+     * Add KotlinJokes project as dependency.
+     * When the app module compiles, some of the important tasks that are run on KotlinJokes:
+     * > Task :KotlinJokes:compileKotlin
+     * > Task :KotlinJokes:compileJava NO-SOURCE
+     * > Task :KotlinJokes:processResources NO-SOURCE
+     * > Task :KotlinJokes:classes UP-TO-DATE
+     * > Task :KotlinJokes:jar
+     *
+     * So basically, KotlinJokes is provided as jar to app module.
+     */
+    implementation project(':KotlinJokes')
 }

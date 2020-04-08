@@ -2,4 +2,5 @@
 <resources>
     <string name="hello_world">Hello World from src paid!</string>
     <string name="welcome_to_paid_version">Welcome! You are using paid version</string>
+    <string name="paid_joke">paid joke</string>
 </resources>
