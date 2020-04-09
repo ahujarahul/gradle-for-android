@@ -73,6 +73,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // enabling Multidex as an example if 65k method limit is reached
+        multiDexEnabled true
     }
 
 
@@ -104,6 +107,14 @@ android {
              * In Signing Config, select release
              * */
             signingConfig signingConfigs.release
+        }
+
+        shrunk {
+            // will shrink out any unused code in the project and generate APK
+            minifyEnabled true
+
+            // will shrink out any unused resources in the project and generate APK
+            shrinkResources true
         }
 
 //        debugQc {
