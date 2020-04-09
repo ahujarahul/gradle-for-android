@@ -4,4 +4,5 @@
     <string name="next">Next</string>
     <string name="paid">paid</string>
     <string name="upgrade_to_paid">Upgrade to paid version</string>
+    <string name="for_free_version">For free version</string>
 </resources>

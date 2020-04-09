@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.rahulahuja.samplelibrary.SupportActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onStart()
 
         btn_next.setOnClickListener(this)
+        btn_free_version.setOnClickListener(this)
     }
 
     override fun onResume() {
@@ -33,6 +35,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     Toast.makeText(this, resources.getString(R.string.upgrade_to_paid), Toast.LENGTH_LONG).show()
                 }
             }
+
+            btn_free_version.id -> SupportActivity.launch(this)
         }
     }
 }

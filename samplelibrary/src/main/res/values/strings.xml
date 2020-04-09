@@ -1,0 +1,4 @@
+<resources>
+    <string name="support_activity_tag">This is support activity from Sample Library</string>
+    <string name="joke">Free Joke:: What is a sea monster’s favorite snack? Ships and dip.</string>
+</resources>

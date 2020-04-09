@@ -14,6 +14,30 @@ apply plugin: 'kotlin-android-extensions'
 android {
 
     /**
+     * RUN RELEASE APK WITHOUT MANUAL BUILD
+     *
+     * This release signing is auto-generated as:
+     *
+     * Build > Generate Signed APK
+     * Fill in the details and generate app key file (.jks)
+     *
+     * app > Open Module Settings > Modules > app > Signing Configs
+     * Create new config as: release
+     * Fill in the details same as while generating appKey > Apply
+     *
+     * Also, see buildTypes > release
+     * */
+    signingConfigs {
+        release {
+            storeFile file('/Users/rahulahuja/AndroidProjects/GradleExplained/app/key/appKey')
+            storePassword 'password'
+            keyAlias = 'Key0'
+            keyPassword 'password'
+        }
+    }
+
+
+    /**
      * compileSdkVersion specifies the Android API level Gradle should use to
      * compile your app. This means your app can use the API features included in
      * this API level and lower.
@@ -62,7 +86,7 @@ android {
      * The release build type applies Proguard settings and is not signed by default.
      */
     buildTypes {
-        debugQc.initWith(buildTypes.debug)
+//        debugQc.initWith(buildTypes.debug)
 
         release {
 
@@ -71,14 +95,23 @@ android {
 
             // This is where the Android plugin should look for the proguard file
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            /**
+             * RUN RELEASE APK WITHOUT MANUAL BUILD
+             *
+             * After creating Signing Config do as:
+             * app > Open Module Settings > Build Variants > app > Build Types > release
+             * In Signing Config, select release
+             * */
+            signingConfig signingConfigs.release
         }
 
-        debugQc {
-            // config that will change basis on build type
-            buildConfigField "int", "INT_VALUE", "0"
-            buildConfigField "String", "BASE_URL", "\"http://blahblha.com/blah/\""
-            buildConfigField "boolean", "BOOL_VALUE", "true"
-        }
+//        debugQc {
+//            // config that will change basis on build type
+//            buildConfigField "int", "INT_VALUE", "0"
+//            buildConfigField "String", "BASE_URL", "\"http://blahblha.com/blah/\""
+//            buildConfigField "boolean", "BOOL_VALUE", "true"
+//        }
     }
 
     /**
@@ -144,7 +177,7 @@ dependencies {
 
     // dependencies can be managed basis flavor as below
     // Assume we want to show ads in free version only
-    freeImplementation "com.google.android.gms:play-services-ads:19.0.1"
+//    freeImplementation "com.google.android.gms:play-services-ads:19.0.1"
 
     /**
      * Add KotlinJokes project as dependency.
@@ -158,4 +191,10 @@ dependencies {
      * So basically, KotlinJokes is provided as jar to app module.
      */
     implementation project(':KotlinJokes')
+
+    /**
+     * Add KotlinJokes project as dependency.
+     * So basically, KotlinJokes is provided as aar to app module.
+     */
+    implementation project(':samplelibrary')
 }
