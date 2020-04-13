@@ -209,3 +209,10 @@ dependencies {
      */
     implementation project(':samplelibrary')
 }
+
+/**
+ * Useful links:
+ * https://developer.android.com/studio/build?utm_source=android-studio#variant_aware
+ *
+ * https://developer.android.com/studio/build/dependencies
+ * */
